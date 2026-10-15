@@ -1,0 +1,14 @@
+services:
+  tester:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      DATABASE_PATH: /data/evaluations.db
+    volumes:
+      - data:/data
+volumes:
+  data:
